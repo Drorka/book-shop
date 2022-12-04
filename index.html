@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Flourish and Blotts</title>
+  </head>
+  <body onload="onInit()">
+        <div class="outer-border">
+           <div class="mid-border">
+              <div class="inner-border">
+                <img class="corner-decoration corner-left-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+                <img class="corner-decoration corner-right-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+                <img class="corner-decoration corner-right-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+                <img class="corner-decoration corner-left-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+                <img class="vertical-decoration top" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+                <img class="vertical-decoration bottom" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+                       <div class="main-content">
+                        <div class="main-img">
+                            <img class="logo" src="img/fb_logo.svg" alt="Flourish and Blotts logo">
+                        </div>
+                          <h1>Flourish and Blotts
+                        </h1>
+                            <section class="main-actions">
+                                <div class="search-add">
+                                    <form onsubmit="onSearchBook(event)">
+                                        <input type="text" name="search-book" placeholder="Search a book" class="search-box"/>
+                                        <button>Search</button>
+                                    </form>
+                                    <button onclick="onAddBook()">Add book</button> 
+                                    <button onclick="onNextPage()">Next Page</button>
+                                </div>
+                                <div class="ranges">
+                                <label class="price-range">
+                                    Max Price:
+                                    <input type="range" min="0" max="30" value="0" class="filter-price-range"
+                                        onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" />
+                                </label>
+                                <label class="rate-range">
+                                    Min Rate:
+                                    <input type="range" min="0" max="9" value="0" class="filter-rate-range"
+                                        onchange="this.title=this.value;onSetFilterBy({minRate: this.value})" />
+                                </label>
+                            </div>
+                            </section>
+                          <table>
+                            <thead>
+                              <th onclick="onSort(this)">ID</th>
+                              <th onclick="onSort(this)">Title</th>
+                              <th onclick="onSort(this)">Price</th>
+                              <th onclick="onSort(this)">Rate</th>
+                              <th colspan="3">Actions</th>
+                            </thead>
+                            <tbody class="books-tbody"></tbody>
+                          </table>
+                          <div class="modal">
+                            <h3>book title</h3>
+                            <h4 class="price">Price: <span></span></h4>
+                            <h4 class="rate">
+                              Rate: <button class="minus" onclick="onSetRate(-1)">-</button>
+                                  <span></span>
+                                  <button class="plus" onclick="onSetRate(+1)">+</button></>
+                            </h4>
+                            <button onclick="onCloseModal()">Close</button>
+                 </div>
+              </div>
+           </div>
+        </div>
+    <script src="js/storage-service.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+  </body>
+</html>
