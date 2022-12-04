@@ -51,6 +51,7 @@ h1 {
 
 .main-actions {
     margin: auto;
+    max-width: 800px;
     padding-bottom: 15px;
     text-align: center;
 }
@@ -65,20 +66,19 @@ h1 {
     padding: 6px;
 }
 
+.search-add {
+    margin: auto;
+    display:flex;
+    text-align: center;
+    justify-content: space-between;
+    max-width: 80vw;
+}
+
 .search-box {
     font-family:'Courier New', Courier, monospace;
     background-color: var(--body-text);
     color: #3A3D3E;
     height: 20px;
-
-}
-
-.search-add {
-    margin: auto;
-    display:flex;
-    text-align: center;
-    justify-content: space-around;
-    max-width: 80vw;
 }
 
 .ranges {
@@ -87,7 +87,6 @@ h1 {
     display:flex;
     justify-content: space-around;
     max-width: 80vw;
-
 }
 
 .price-range {
